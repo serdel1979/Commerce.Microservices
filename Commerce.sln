@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{4505D996-FCE9-48DC-A5A4-43E75EE45EE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{13D3CD66-B4E5-4FB7-B6AF-5DFAF2A3D799}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6450BF79-4FBE-48B3-8196-6A4712EB4C68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Identity", "01.Identity", "{43DE404C-0883-476E-BB15-9762ED6C5EB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Catalog", "02.Catalog", "{78E995C2-18DC-428A-A8A0-EDC4D872759C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Customer", "03.Customer", "{EDFB3BD7-9209-4EE5-A5C9-F667D9858016}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Order", "04.Order", "{CD668ABA-12F3-4E64-AA62-D5289D77C3F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43DE404C-0883-476E-BB15-9762ED6C5EB2} = {6450BF79-4FBE-48B3-8196-6A4712EB4C68}
+		{78E995C2-18DC-428A-A8A0-EDC4D872759C} = {6450BF79-4FBE-48B3-8196-6A4712EB4C68}
+		{EDFB3BD7-9209-4EE5-A5C9-F667D9858016} = {6450BF79-4FBE-48B3-8196-6A4712EB4C68}
+		{CD668ABA-12F3-4E64-AA62-D5289D77C3F6} = {6450BF79-4FBE-48B3-8196-6A4712EB4C68}
+		{410CAFEF-DF1D-4DC5-9748-7B97742FEF9B} = {78E995C2-18DC-428A-A8A0-EDC4D872759C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F195CAD-20E3-4C32-8F7B-90C6C36E6E50}
+	EndGlobalSection
+EndGlobal
