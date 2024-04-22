@@ -1,4 +1,5 @@
 ﻿using Catalog.Domain;
+using Catalog.Persistence.Database.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,24 @@ namespace Catalog.Persistence.Database
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.HasDefaultSchema("Catalog");
+
+            ModelConfig(modelBuilder);
+        }
+
+
+        private void ModelConfig(ModelBuilder modelBuilder)
+        {
+            new ProductConfiguration(modelBuilder.Entity<Product>());
+            new ProductInStockConfiguration(modelBuilder.Entity<ProductInStock>());
+        }
+
 
         DbSet<Product> Products { get; set; }
         DbSet<ProductInStock> Stocks { get; set; }
