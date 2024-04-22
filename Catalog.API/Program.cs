@@ -14,9 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseNpgsql(builder.Configuration.GetConnectionString("Connection"),
-
                     x => x.MigrationsHistoryTable("__EFMigrationsHistory","Catalog")
-        );
+    );
 });
 
 var app = builder.Build();
