@@ -27,9 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{D7AB33A5-D10E-49AD-BEC2-86A00B84915E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "Catalog.Domain\Catalog.Domain.csproj", "{BC659B6A-C1AA-4DC8-B86B-4A5F0E9B18AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "Catalog.Domain\Catalog.Domain.csproj", "{BC659B6A-C1AA-4DC8-B86B-4A5F0E9B18AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Persistence.Database", "Catalog.Persistence.Database\Catalog.Persistence.Database.csproj", "{98A7902F-7FDB-400A-8B31-F76F66E87330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Persistence.Database", "Catalog.Persistence.Database\Catalog.Persistence.Database.csproj", "{98A7902F-7FDB-400A-8B31-F76F66E87330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Service.Queries", "Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{17E8E1B8-574B-4131-AB77-7279926A8F7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{98A7902F-7FDB-400A-8B31-F76F66E87330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A7902F-7FDB-400A-8B31-F76F66E87330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A7902F-7FDB-400A-8B31-F76F66E87330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E8E1B8-574B-4131-AB77-7279926A8F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E8E1B8-574B-4131-AB77-7279926A8F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E8E1B8-574B-4131-AB77-7279926A8F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E8E1B8-574B-4131-AB77-7279926A8F7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{D7AB33A5-D10E-49AD-BEC2-86A00B84915E} = {78E995C2-18DC-428A-A8A0-EDC4D872759C}
 		{BC659B6A-C1AA-4DC8-B86B-4A5F0E9B18AA} = {D7AB33A5-D10E-49AD-BEC2-86A00B84915E}
 		{98A7902F-7FDB-400A-8B31-F76F66E87330} = {1525CEAB-6275-4CF4-B88B-1805893A5E3E}
+		{17E8E1B8-574B-4131-AB77-7279926A8F7E} = {FD0B7FA2-7C1A-4BDD-9A74-9B5CB29DD1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F195CAD-20E3-4C32-8F7B-90C6C36E6E50}
