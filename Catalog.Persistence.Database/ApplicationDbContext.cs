@@ -33,8 +33,8 @@ namespace Catalog.Persistence.Database
         }
 
 
-        DbSet<Product> Products { get; set; }
-        DbSet<ProductInStock> Stocks { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductInStock> Stocks { get; set; }
 
     }
 }

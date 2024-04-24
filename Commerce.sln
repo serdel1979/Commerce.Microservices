@@ -35,11 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.Queries", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{29E2D218-49F3-4BA0-BB2B-573267163E06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Collection", "Service.Common.Collection\Service.Common.Collection.csproj", "{99EBB833-6C76-4CB1-ACA5-6BFFE7660CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Collection", "Service.Common.Collection\Service.Common.Collection.csproj", "{99EBB833-6C76-4CB1-ACA5-6BFFE7660CC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Mapping", "Service.Common.Mapping\Service.Common.Mapping.csproj", "{E106F42C-6BC4-4B25-BBF4-C352EDACCFA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Mapping", "Service.Common.Mapping\Service.Common.Mapping.csproj", "{E106F42C-6BC4-4B25-BBF4-C352EDACCFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common.Pagging", "Service.Common.Pagging\Service.Common.Pagging.csproj", "{7AAFF4C4-B8C0-4649-996F-2A39DAE59408}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Pagging", "Service.Common.Pagging\Service.Common.Pagging.csproj", "{7AAFF4C4-B8C0-4649-996F-2A39DAE59408}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

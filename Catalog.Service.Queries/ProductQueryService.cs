@@ -1,6 +1,9 @@
 ﻿using Catalog.Persistence.Database;
 using Catalog.Service.Queries.DTOs;
+using Microsoft.EntityFrameworkCore;
 using Service.Common.Collection;
+using Service.Common.Mapping;
+using Service.Common.Pagging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +12,17 @@ using System.Threading.Tasks;
 
 namespace Catalog.Service.Queries
 {
-    public class ProductQueryService
+
+
+    public interface IProductQueryService
+    {
+        Task<DataCollection<ProductDTO>> GetAllAsync(int page, int take, IEnumerable<int> products = null);
+        Task<ProductDTO> GetAsync(int Id);
+    }
+
+
+
+    public class ProductQueryService : IProductQueryService
     {
         private readonly ApplicationDbContext _Context;
 
@@ -23,7 +36,18 @@ namespace Catalog.Service.Queries
 
         public async Task<DataCollection<ProductDTO>> GetAllAsync(int page, int take, IEnumerable<int> products = null)
         {
+            var collection = await _Context.Products
+                .Where(x => products == null || products.Contains(x.Id))
+                .OrderByDescending(products => products.Id)
+                .GetPagedAsync(page, take);
 
+            return collection.MapTo<DataCollection<ProductDTO>>();
+
+        }
+
+        public async Task<ProductDTO> GetAsync(int Id)
+        {
+            return (await _Context.Products.SingleAsync(x => x.Id == Id)).MapTo<ProductDTO>();
         }
 
     }
