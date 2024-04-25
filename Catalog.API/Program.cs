@@ -1,6 +1,8 @@
 using Catalog.Persistence.Database;
 using Catalog.Service.Queries;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IProductQueryService, ProductQueryService>();
 
+//builder.Services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers")); //<- ERROR
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {

@@ -1,5 +1,7 @@
-﻿using Catalog.Service.Queries;
+﻿using Catalog.Service.EventHandlers.Commands;
+using Catalog.Service.Queries;
 using Catalog.Service.Queries.DTOs;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,10 +15,13 @@ namespace Catalog.API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductQueryService productQueryService;
+        private readonly IMediator _mediator;
 
-        public ProductController(IProductQueryService productQueryService)
+        public ProductController(IProductQueryService productQueryService,
+            IMediator mediator)
         {
             this.productQueryService = productQueryService;
+            this._mediator = mediator;
         }
 
 
@@ -35,6 +40,16 @@ namespace Catalog.API.Controllers
         public async Task<ProductDTO> Get(int Id)
         {
             return await productQueryService.GetAsync(Id);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductCreateCommand command)
+        {
+           //usar librerua mediatr y mediatr...dependencyInjection
+           await _mediator.Publish(command);
+
+            return Ok();
         }
     }
 }
