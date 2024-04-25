@@ -17,7 +17,7 @@ builder.Services.AddTransient<IProductQueryService, ProductQueryService>();
 
 //builder.Services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers")); //<- ERROR
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.Load("Catalog.Service.EventHandlers")));
 
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {

@@ -47,7 +47,7 @@ namespace Catalog.API.Controllers
         public async Task<IActionResult> Create(ProductCreateCommand command)
         {
            //usar librerua mediatr y mediatr...dependencyInjection
-           await _mediator.Publish(command);
+            await _mediator.Publish(command);
 
             return Ok();
         }
