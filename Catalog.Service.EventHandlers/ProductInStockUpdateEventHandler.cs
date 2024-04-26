@@ -49,9 +49,8 @@ namespace Catalog.Service.EventHandlers
                         _logger.LogError($"Product no tiene stock suficiente");
                         throw new Exception($"Product {entry.ProductId} no tiene stock suficiente");
                     }
-
-                    _logger.LogInformation($"---Actualización de stock--- Nuevo stock = {entry.Stock}");
                     entry.Stock -= entry.Stock;
+                    _logger.LogInformation($"---Actualización de stock--- Nuevo stock = {entry.Stock}");
                 }
                 else
                 {
