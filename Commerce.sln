@@ -41,7 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Mapping", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Pagging", "Service.Common.Pagging\Service.Common.Pagging.csproj", "{7AAFF4C4-B8C0-4649-996F-2A39DAE59408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Service.EventHandlers", "Catalog.Service.EventHandlers\Catalog.Service.EventHandlers.csproj", "{4CA3D463-E948-44D1-9674-240D1D880CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.EventHandlers", "Catalog.Service.EventHandlers\Catalog.Service.EventHandlers.csproj", "{4CA3D463-E948-44D1-9674-240D1D880CE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6D1B91D1-F818-4BB8-9B40-56C6925AA184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Common.Enums", "Catalog.Common.Enums\Catalog.Common.Enums.csproj", "{D303692F-A8F7-4190-B604-BC2A80FF311D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,10 @@ Global
 		{4CA3D463-E948-44D1-9674-240D1D880CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CA3D463-E948-44D1-9674-240D1D880CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CA3D463-E948-44D1-9674-240D1D880CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D303692F-A8F7-4190-B604-BC2A80FF311D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D303692F-A8F7-4190-B604-BC2A80FF311D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D303692F-A8F7-4190-B604-BC2A80FF311D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D303692F-A8F7-4190-B604-BC2A80FF311D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +111,8 @@ Global
 		{E106F42C-6BC4-4B25-BBF4-C352EDACCFA8} = {29E2D218-49F3-4BA0-BB2B-573267163E06}
 		{7AAFF4C4-B8C0-4649-996F-2A39DAE59408} = {29E2D218-49F3-4BA0-BB2B-573267163E06}
 		{4CA3D463-E948-44D1-9674-240D1D880CE6} = {FD0B7FA2-7C1A-4BDD-9A74-9B5CB29DD1AC}
+		{6D1B91D1-F818-4BB8-9B40-56C6925AA184} = {78E995C2-18DC-428A-A8A0-EDC4D872759C}
+		{D303692F-A8F7-4190-B604-BC2A80FF311D} = {6D1B91D1-F818-4BB8-9B40-56C6925AA184}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F195CAD-20E3-4C32-8F7B-90C6C36E6E50}
