@@ -2,6 +2,7 @@ using Catalog.Persistence.Database;
 using Catalog.Service.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +13,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddTransient<IProductQueryService, ProductQueryService>();
 
 //builder.Services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers")); //<- ERROR
 
@@ -26,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
     );
 });
 
-
+builder.Services.AddTransient<IProductQueryService, ProductQueryService>();
 
 
 var app = builder.Build();
@@ -37,6 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseAuthorization();
 
