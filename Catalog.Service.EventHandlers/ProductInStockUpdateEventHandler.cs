@@ -43,6 +43,11 @@ namespace Catalog.Service.EventHandlers
             {
                 var entry = stocks.SingleOrDefault(x => x.ProductId == item.ProductId);
 
+                if(entry is null)
+                {
+                    throw new ProductInStockUpdateComandException($"Product no existe");
+                }
+
                 if(item.Action == ProductInStockAction.Substract)
                 {
                     if (entry == null || item.Stock > entry.Stock)

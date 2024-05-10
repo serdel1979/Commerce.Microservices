@@ -140,28 +140,43 @@ namespace Catalog.Test
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ProductInStockUpdateComandException))]
         public void TryToAddStockWhenProductNotExists()
         {
             var context = ApplicationDbContextInMemory.Get();
             var productId = 4;
 
-            var handler = new ProductInStockUpdateEventHandler(context, GetLoger);
+            try
+            {
+                var handler = new ProductInStockUpdateEventHandler(context, GetLoger);
 
-            handler.Handle(new ProductInStockUpdateComand
-            {
-                Items = new List<ProductInStockUpdateItem>() {
-            new ProductInStockUpdateItem
-            {
-                ProductId = productId,
-                Stock = 2,
-                Action = ProductInStockAction.Add
+                handler.Handle(new ProductInStockUpdateComand
+                {
+                    Items = new List<ProductInStockUpdateItem>() {
+                        new ProductInStockUpdateItem
+                        {
+                            ProductId = productId,
+                            Stock = 2,
+                            Action = ProductInStockAction.Add
+                        }
+                    }
+                }, new CancellationToken()).Wait();
+
+                var stockInDb = context.Stocks.Single(s => s.Id == productId).Stock;
+
+                Assert.AreEqual(stockInDb, 2);
             }
-        }
-            }, new CancellationToken()).Wait();
+            catch (AggregateException ae)
+            {
+                var exception = ae.GetBaseException();
 
-            var stockInDb = context.Stocks.Single(s => s.Id == productId).Stock;
+                if (exception is ProductInStockUpdateComandException)
+                {
+                    throw new ProductInStockUpdateComandException(exception?.InnerException?.Message);
+                }
+            }
 
-            Assert.AreEqual(stockInDb, 2);
+            
         }
 
 

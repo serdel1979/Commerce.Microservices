@@ -47,7 +47,12 @@ namespace Catalog.Service.Queries
 
         public async Task<ProductDTO> GetAsync(int Id)
         {
-            return (await _Context.Products.SingleAsync(x => x.Id == Id)).MapTo<ProductDTO>();
+            var product = (await _Context.Products.SingleAsync(x => x.Id == Id)).MapTo<ProductDTO>();
+            if (product == null)
+            {
+                throw new KeyNotFoundException(nameof(product));
+            }
+            return product;
         }
 
     }

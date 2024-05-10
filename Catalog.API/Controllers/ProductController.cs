@@ -37,9 +37,17 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet("Id:int")]
-        public async Task<ProductDTO> Get(int Id)
+        public async Task<IActionResult> Get(int Id)
         {
-            return await productQueryService.GetAsync(Id);
+            try
+            {
+                return Ok(await productQueryService.GetAsync(Id));
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+
         }
 
 
