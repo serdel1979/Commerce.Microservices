@@ -1,4 +1,6 @@
+using Catalog.Service.Queries;
 using Customer.Persistence.Database;
+using Customer.Service.Queries;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
                     x => x.MigrationsHistoryTable("__EFMigrationsHistory", "Customer")
     );
 });
+
+
+builder.Services.AddTransient<ICustomerQueryService, CustomerQueryService>();
 
 var app = builder.Build();
 
