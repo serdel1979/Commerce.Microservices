@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Service.Common.Collection;
 using Customer.Service.Queries;
 using Customer.Service.Queries.DTOs;
+using MediatR;
 
 namespace Customer.API.Controllers
 {
@@ -13,10 +14,12 @@ namespace Customer.API.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerQueryService customerQuery;
+        private readonly IMediator _mediatr;
 
-        public CustomerController(ICustomerQueryService customerQuery)
+        public CustomerController(ICustomerQueryService customerQuery, IMediator mediatr)
         {
             this.customerQuery = customerQuery;
+            this._mediatr = mediatr;
         }
 
 
@@ -45,6 +48,15 @@ namespace Customer.API.Controllers
 
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductCreateCommand command)
+        {
+            //usar librerua mediatr y mediatr...dependencyInjection
+            await _mediatr.Publish(command);
+
+            return Ok();
+        }
 
 
     }

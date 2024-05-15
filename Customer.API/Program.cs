@@ -2,6 +2,7 @@ using Catalog.Service.Queries;
 using Customer.Persistence.Database;
 using Customer.Service.Queries;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
     );
 });
 
+
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.Load("Customer.Service.EventHandler")));
 
 builder.Services.AddTransient<ICustomerQueryService, CustomerQueryService>();
 
