@@ -71,9 +71,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Persistence.Database", "Customer.Persistence.Database\Customer.Persistence.Database.csproj", "{5214EF7A-E0C7-4044-A981-48A23EDD3977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.EventHandlers", "Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{3AACDB20-46EE-4E54-89BA-DFB754D5DE6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.EventHandlers", "Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{3AACDB20-46EE-4E54-89BA-DFB754D5DE6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.Queries", "Customer.Service.Queries\Customer.Service.Queries.csproj", "{66BDF1F5-BE9A-4C13-8A52-6B0A191B69B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.Queries", "Customer.Service.Queries\Customer.Service.Queries.csproj", "{66BDF1F5-BE9A-4C13-8A52-6B0A191B69B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
