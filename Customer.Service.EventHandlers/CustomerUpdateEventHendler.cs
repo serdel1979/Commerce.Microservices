@@ -1,4 +1,5 @@
-﻿using Customer.Service.EventHandlers.Commands;
+﻿using Customer.Persistence.Database;
+using Customer.Service.EventHandlers.Commands;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,23 @@ namespace Customer.Service.EventHandlers
 {
     public class CustomerUpdateEventHendler : INotificationHandler<CustomerUpdateCommand>
     {
+        private readonly ApplicationDbContext _context;
 
-        public CustomerUpdateEventHendler()
+        public CustomerUpdateEventHendler(ApplicationDbContext context)
         {
-            
+            this._context = context;
         }
-        public Task Handle(CustomerUpdateCommand notification, CancellationToken cancellationToken)
+        public async Task Handle(CustomerUpdateCommand notification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var customer =  _context.Clients.Where(cl=>cl.Id == notification.Id).FirstOrDefault();
+            if (customer == null)
+            {
+                throw new KeyNotFoundException("Key not found");
+            }
+            customer.Id = notification.Id;
+            customer.Name = notification.Name;
+            _context.Update(customer);
+            await _context.SaveChangesAsync();
         }
 
 

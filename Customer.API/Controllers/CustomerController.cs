@@ -60,5 +60,17 @@ namespace Customer.API.Controllers
         }
 
 
+
+        [HttpPut("Id:int")]
+        public async Task<IActionResult> Update(CustomerUpdateCommand command, int Id)
+        {
+           
+            command.Id = Id;
+            await _mediatr.Publish(command);
+
+            return Ok();
+        }
+
+
     }
 }
