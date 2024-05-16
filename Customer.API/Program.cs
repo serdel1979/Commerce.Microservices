@@ -22,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 
 
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.Load("Customer.Service.EventHandler")));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.Load("Customer.Service.EventHandlers")));
 
 builder.Services.AddTransient<ICustomerQueryService, CustomerQueryService>();
 

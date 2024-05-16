@@ -6,6 +6,7 @@ using Service.Common.Collection;
 using Customer.Service.Queries;
 using Customer.Service.Queries.DTOs;
 using MediatR;
+using Customer.Service.EventHandlers.Commands;
 
 namespace Customer.API.Controllers
 {
@@ -50,9 +51,9 @@ namespace Customer.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductCreateCommand command)
+        public async Task<IActionResult> Create(CustomerCreateCommand command)
         {
-            //usar librerua mediatr y mediatr...dependencyInjection
+            //usar libreria mediatr y mediatr...dependencyInjection
             await _mediatr.Publish(command);
 
             return Ok();
