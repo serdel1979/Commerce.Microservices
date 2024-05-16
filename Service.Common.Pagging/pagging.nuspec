@@ -3,6 +3,12 @@
   <metadata>
     <id>DataCollectionExtensionSdlBsso24042024</id>
     <version>1.0.0</version>
+	<files>
+		<file src="LICENSE" target="" />
+		<file src="README.md" target="" />
+	</files>
+
+
     <authors>Sergio De Luca</authors>
     <owners>Sergio De Luca</owners>
     <description>Provides paging functionality for queries</description>
