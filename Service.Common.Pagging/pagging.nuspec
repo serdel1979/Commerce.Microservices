@@ -1,20 +1,19 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>DataCollectionExtensionSdlBsso24042024</id>
-    <version>1.0.0</version>
-	<files>
-		<file src="LICENSE" target="" />
-		<file src="README.md" target="" />
-	</files>
-
-
+    <id>Service.Common.Pagging</id>
+    <version>1.0.1</version>
     <authors>Sergio De Luca</authors>
     <owners>Sergio De Luca</owners>
     <description>Provides paging functionality for queries</description>
     <dependencies>
       <dependency id="Microsoft.EntityFrameworkCore" version="3.1.0" />
       <dependency id="Npgsql.EntityFrameworkCore.PostgreSQL" version="8.0.2" />
+      <dependency id="Service.Common.Collection" version="1.0.0" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="LICENSE" target="" />
+    <file src="README.md" target="" />
+  </files>
 </package>
