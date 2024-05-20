@@ -17,6 +17,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Order.Persistence.Database\Order.Persistence.Database.csproj" />
+    <ProjectReference Include="..\Service.Common.Collection\Service.Common.Collection.csproj" />
+    <ProjectReference Include="..\Service.Common.Mapping\Service.Common.Mapping.csproj" />
+    <ProjectReference Include="..\Service.Common.Pagging\Service.Common.Pagging.csproj" />
   </ItemGroup>
 
 </Project>
